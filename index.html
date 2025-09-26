@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini App – Portafolio Sonoro</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="container">
+    <h1>Portafolio Sonoro</h1>
+    <button id="themeToggle" aria-label="Cambiar tema">🌙</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <img src="assets/img/cover.svg" alt="Portada minimalista" class="hero-img">
+      <div>
+        <h2>Proyecto en entorno productivo</h2>
+        <p>Ejemplo ligero con <strong>HTML + CSS + JS</strong>, imágenes SVG y un audio WAV muy pequeño.</p>
+        <a class="btn" href="#galeria">Ver galería</a>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <h3>Galería</h3>
+      <div class="grid">
+        <figure class="card">
+          <img src="assets/img/pieza1.svg" alt="Pieza 1" loading="lazy">
+          <figcaption>Pieza 1 (SVG)</figcaption>
+        </figure>
+        <figure class="card">
+          <img src="assets/img/pieza2.svg" alt="Pieza 2" loading="lazy">
+          <figcaption>Pieza 2 (SVG)</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="audio">
+      <h3>Audio</h3>
+      <p>Un breve tono de prueba: <button id="playBtn" class="btn">▶ Reproducir</button></p>
+      <audio id="player" src="assets/audio/beep.wav" preload="auto"></audio>
+    </section>
+
+    <section id="form">
+      <h3>Contacto (validación en cliente)</h3>
+      <form id="contactForm" novalidate>
+        <label>Nombre
+          <input type="text" id="nombre" placeholder="Tu nombre" required minlength="2" maxlength="50">
+        </label>
+        <label>Correo
+          <input type="email" id="correo" placeholder="tu@correo.com" required>
+        </label>
+        <label>Mensaje
+          <textarea id="mensaje" placeholder="Escribe algo..." required minlength="5" maxlength="200"></textarea>
+        </label>
+        <div class="actions">
+          <button type="submit" class="btn">Enviar</button>
+          <button type="reset" class="btn btn-secondary">Limpiar</button>
+        </div>
+        <p id="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small>Hecho por estudiantes – DGETI · Submódulo Implementa aplicaciones web</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
