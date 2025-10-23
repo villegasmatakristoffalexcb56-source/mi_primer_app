@@ -1,0 +1,31 @@
+name: Prueba de carga simple
+on: [workflow_dispatch]  # te permite ejecutarlo manualmente desde la pestaña Actions
+
+jobs:
+  loadtest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Instalar k6
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y k6
+      
+      - name: Crear script de prueba
+        run: |
+          echo '
+          import http from "k6/http";
+          import { sleep } from "k6";
+
+          export let options = {
+            vus: 5,          // usuarios virtuales
+            duration: "10s", // duración de la prueba
+          };
+
+          export default function () {
+            http.get("https://example.com"); // 🔁 cambia esto por tu URL
+            sleep(1);
+          }
+          ' > test.js
+
+      - name: Ejecutar prueba de carga
+        run: k6 run test.js
