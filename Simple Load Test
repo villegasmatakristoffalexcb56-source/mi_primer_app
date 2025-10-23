@@ -1,0 +1,15 @@
+jobs:
+  load-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run simple load test
+        run: |
+          echo "Iniciando prueba de carga..."
+          for i in {1..100}; do
+            curl -s -o /dev/null -w "%{http_code}\n" https://tu-sitio.com &
+          done
+          wait
+          echo "Prueba completada"
