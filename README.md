@@ -16,3 +16,8 @@ Proyecto de ejemplo para **configurar y validar un entorno productivo** en GitHu
 ## Sugerencias de evidencia
 - Capturas de la URL en producción y reportes de Lighthouse.
 - Tabla con métricas y reflexión final.
+- | Fecha       | Tareas simuladas | Duración estimada | Resultado |
+|--------------|------------------|--------------------|------------|
+| 2025-10-26   | 10               | 10 segundos        | ✅ Correcto |
+| 2025-10-27   | 50               | 50 segundos        | ✅ Correcto |
+
