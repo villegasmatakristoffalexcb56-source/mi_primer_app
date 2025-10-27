@@ -1,0 +1,25 @@
+
+name: Simulación de Prueba de Carga (sin código)
+
+on:
+  workflow_dispatch:  # Permite ejecutar la simulación manualmente
+
+jobs:
+  simulacion:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Iniciar simulación
+        run: echo "Iniciando simulación de carga..."
+
+      - name: Generar tareas simuladas
+        run: |
+          echo "Simulando 10 tareas de carga..."
+          for i in {1..10}; do
+            echo "Procesando tarea $i..."
+            sleep 1
+          done
+
+      - name: Resultados de simulación
+        run: echo "Simulación completada correctamente."
+
